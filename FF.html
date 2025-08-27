@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狒友今天玩什么？</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f0f8ff;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        #result {
+            font-size: 24px;
+            color: #666;
+            margin: 30px 0;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1> 狒狒友今天玩什么？</h1>
+    <div id="result">无剧透，内含常规和非常规活动</div>
+    <button onclick="getRandomActivity()">Roll！</button>
+
+    <script>
+        // 这里是50个活动的列表
+        const activities = [
+            "打幻巧战", "挖宝", "装修", "搓生产", "挖采集",
+            "做天书", "去野队打零式", "去野队打绝本", "重温剧情", "战场随机",
+            "日随", "导随", "去金碟", "战场5V5", "逛Rp店",
+            "海都挂机", "刷双色宝石", "新月岛坐牢", "去刷深层迷宫", "去野队开荒极神",
+            "做幻化", "用最不擅长的职业打高随", "点23个喜欢的种族打24人本", "去拍照", "给路人送小礼物",
+            "找亲友要点gil", "做肝武", "去刷Logs", "求求你不要再狒了", "做一个拉屎宏",
+            "给亲友点gil", "去老板队打工", "去向泰坦表达爱意", "去吃豆芽", "去跳望海楼",
+            "去钓鱼", "切第一视角打本", "招募10个喜欢的种族贴贴", "去刷旧的极神坐骑", "去对亲友贩剑",
+            "去向陆行鸟表达爱意", "去给雇员换一套幻化", "换一个发型", "吃99个水煮蛋", "组队打极神/零式，但单奶",
+            "去种植点东西", "停止狒狒！去吃肯德基！", "去主城穿着很潮的衣服跳舞", "去刷四人本幻化", "去刷多变迷宫"
+        ];
+
+        // 这个函数会随机选择一个活动
+        function getRandomActivity() {
+            // 生成0到49之间的随机数
+            const randomIndex = Math.floor(Math.random() * activities.length);
+            
+            // 获取随机选中的活动
+            const selectedActivity = activities[randomIndex];
+            
+            // 显示在页面上
+            document.getElementById('result').textContent = selectedActivity;
+        }
+    </script>
+</body>
+</html>
